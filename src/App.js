@@ -24,7 +24,10 @@ function App() {
     };
 
     try {
-      const res = await fetch("http://localhost:3001/users", settings);
+      const res = await fetch(
+        "https://gutorial-backend.herokuapp.com/users",
+        settings
+      );
       if (res.ok) {
         return res.json();
       }
@@ -35,7 +38,7 @@ function App() {
 
   const getUsers = async () => {
     try {
-      const res = await fetch("http://localhost:3001/users");
+      const res = await fetch("https://gutorial-backend.herokuapp.com/users");
       const data = await res.json();
       if (res.ok) {
         setUsersList(data);
